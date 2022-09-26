@@ -14,10 +14,10 @@ $buku = $rows;
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Daftar Buku</title>
+	<title>Daftar Novel</title>
 </head>
 <body>
-	<h3>Daftar buku</h3>
+	<h3>Daftar Novel</h3>
 
 	<a href="tambah.php">Tambah Data buku</a>
   	<br><br>
