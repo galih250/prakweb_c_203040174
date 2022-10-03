@@ -15,6 +15,7 @@ $buku = $rows;
 <html>
 <head>
 	<title>Daftar Novel</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<h3>Daftar Novel</h3>
