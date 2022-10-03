@@ -37,6 +37,7 @@ $buku = $rows;
 			<th>Jumlah Halaman</th>
             <th>Penerbit</th>
             <th>Gambar</th>
+			<th>Opsi</th>
 		</tr>
 
 		<?php if(empty($buku)) : ?>
@@ -56,6 +57,7 @@ $buku = $rows;
             <td><?= $b['jumlah_lembar']; ?></td>
             <td><?= $b['penerbit']; ?></td>
             <td><img src="img/<?= $b['gambar_buku']; ?>" width ="90"></td>
+			<td><a href="ubah.php?id=<?= $b['id']; ?>">ubah</a></li></td>   
 		</tr>
 		<?php endforeach; ?>
 	</table>
