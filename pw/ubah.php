@@ -1,6 +1,7 @@
 <?php
 require 'function.php';
 
+
 // jika tidak ada URL
 if (!isset($_GET['id'])) {
   header("Location: index.php");
@@ -11,7 +12,7 @@ if (!isset($_GET['id'])) {
 $id = $_GET['id'];
 
 // query  daftar novel id
-$buku = query("SELECT * FROM buku WHERE id = $id");
+$b = query("SELECT * FROM buku WHERE id = $id");
 
 // cek apakah tombol tambah sudah ditekan
 if (isset($_POST['ubah'])) {
@@ -40,13 +41,13 @@ if (isset($_POST['ubah'])) {
             <li>
                 <label>
                   Nama Buku :
-                  <input type="text" name="nama_buku" required value="<?= $b['nama_buku']; ?>">
+                  <input type="text" name="nama_buku" autofocus required value="<?= $b['nama_buku']; ?>">
                 </label><br><br>
             </li>
             <li>
                 <label>
                   Pengarang :
-                  <input type="text" name="nama_pengarang" autofocus required value="<?= $b['nama_pengarang']; ?>">
+                  <input type="text" name="nama_pengarang" required value="<?= $b['nama_pengarang']; ?>">
                 </label><br><br>
             </li>
             <li>

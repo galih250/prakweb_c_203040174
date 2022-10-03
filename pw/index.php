@@ -1,14 +1,13 @@
 <?php  
-$conn = mysqli_connect('localhost', 'root', '', 'prakweb_c_203040174_pw');
+require 'function.php';
 
-$result = mysqli_query($conn, "SELECT * FROM buku");
+// query isi tabel
+$buku = query("SELECT * FROM buku");
 
-$rows = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $rows[] = $row;
-}
-
-$buku = $rows;
+//ketika tombol cari di klik
+if (isset($_POST['cari'])) {
+	$buku = cari($_POST['keyword']);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ $buku = $rows;
 <head>
 	<title>Daftar Novel</title>
 	<link rel="stylesheet" href="style.css">
-</head>
+</head> 
 <body>
 	<h3>Daftar Novel</h3>
 
@@ -57,7 +56,10 @@ $buku = $rows;
             <td><?= $b['jumlah_lembar']; ?></td>
             <td><?= $b['penerbit']; ?></td>
             <td><img src="img/<?= $b['gambar_buku']; ?>" width ="90"></td>
-			<td><a href="ubah.php?id=<?= $b['id']; ?>">ubah</a></li></td>   
+			<td>
+				<a href="ubah.php?id=<?= $b['id']; ?>">ubah</a>
+				<a href="hapus.php?id=<?= $b['id']; ?>">hapus</a>
+			</td>   
 		</tr>
 		<?php endforeach; ?>
 	</table>
