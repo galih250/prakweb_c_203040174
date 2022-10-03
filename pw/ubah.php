@@ -10,7 +10,7 @@ if (!isset($_GET['id'])) {
 // ambil id dari URL
 $id = $_GET['id'];
 
-// query mahasiswa berdasarkan id
+// query  daftar novel id
 $buku = query("SELECT * FROM buku WHERE id = $id");
 
 // cek apakah tombol tambah sudah ditekan
