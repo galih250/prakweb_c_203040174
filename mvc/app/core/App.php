@@ -1,8 +1,8 @@
 <?php
 
-class App {
+class App{
     public function __construct()
     {
-        echo 'OK!';
+        echo 'Ok!';
     }
 }
